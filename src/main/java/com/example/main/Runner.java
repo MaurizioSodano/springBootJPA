@@ -17,8 +17,5 @@ public class Runner implements CommandLineRunner {
        greeter.greet();
     }
 
-    @Bean
-    public Greeter createGreeter() {
-        return new Greeter();
-    }
+
 }
