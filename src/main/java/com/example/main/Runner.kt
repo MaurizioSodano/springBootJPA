@@ -19,5 +19,10 @@ class Runner : CommandLineRunner {
             println("Find by Id " + retrievedUserOpt.get())
         }
         userDao.findAll().forEach{u-> println(u)}
+
+        val users =userDao.findByName("Jupiter")
+
+        users.forEach{u-> println("find by name: $u") }
+
     }
 }
