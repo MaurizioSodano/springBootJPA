@@ -1,6 +1,8 @@
 package com.example.main;
 
+import com.example.entities.User;
 import com.example.greeters.Greeter;
+import com.example.repositories.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -10,11 +12,13 @@ import org.springframework.stereotype.Component;
 public class Runner implements CommandLineRunner {
 
     @Autowired
-    private Greeter greeter;
+    private UserDao userDao;
 
     @Override
     public void run(String... args) {
-       greeter.greet();
+        var user1=new User("Neptune","neptune@example.com");
+
+        userDao.save(user1);
     }
 
 
